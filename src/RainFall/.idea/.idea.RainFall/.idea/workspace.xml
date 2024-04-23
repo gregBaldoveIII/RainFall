@@ -8,9 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85fc9d7a-5f47-4e88-a306-e00de1c4be59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RainFall.Tests/Unit/Controller/RainFallControllerTests.cs" afterDir="false" />
-    </list>
+    <list default="true" id="85fc9d7a-5f47-4e88-a306-e00de1c4be59" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713581220777</updated>
       <workItem from="1713581222019" duration="7324000" />
-      <workItem from="1713840315897" duration="19865000" />
+      <workItem from="1713840315897" duration="20177000" />
     </task>
     <servers />
   </component>
@@ -116,24 +114,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RainFall.API/Controllers/RainFallController.cs</url>
-          <line>44</line>
-          <properties documentPath="D:\Source\RainFall\src\RainFall\RainFall.API\Controllers\RainFallController.cs" initialLine="44" containingFunctionPresentation="Method 'GetStationReading'">
-            <startOffsets>
-              <option value="1858" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2070" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
