@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\RainFall.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\RainFall.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\RainFall.Infrastructure.csproj",
+        "projectName": "RainFall.Infrastructure",
+        "projectPath": "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\RainFall.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\",
+        "outputPath": "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Gregorio Baldove III\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0-preview.3.24172.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

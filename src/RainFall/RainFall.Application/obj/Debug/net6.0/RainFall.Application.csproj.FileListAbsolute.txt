@@ -1,0 +1,17 @@
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Application.deps.json
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Application.dll
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Application.pdb
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Domain.dll
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Infrastructure.dll
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Domain.pdb
+D:\Source\RainFall\src\RainFall\RainFall.Application\bin\Debug\net6.0\RainFall.Infrastructure.pdb
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.csproj.AssemblyReference.cache
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.AssemblyInfoInputs.cache
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.AssemblyInfo.cs
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.csproj.CoreCompileInputs.cache
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.csproj.CopyComplete
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.dll
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\refint\RainFall.Application.dll
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\RainFall.Application.pdb
+D:\Source\RainFall\src\RainFall\RainFall.Application\obj\Debug\net6.0\ref\RainFall.Application.dll

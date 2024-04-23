@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "vvp9FmFR5GLOXV8fvxgVsmifxuv2/t++gAVC/Mwy7Pvmq+OzqoL9kZB0CFbBQI3qf2PTvwQRgS2wiqX6+pMNxw==",
+  "success": true,
+  "projectFilePath": "D:\\Source\\RainFall\\src\\RainFall\\RainFall.Infrastructure\\RainFall.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0-preview.3.24172.9\\microsoft.extensions.dependencyinjection.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0-preview.3.24172.9\\microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0-preview.3.24172.9\\microsoft.extensions.logging.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0-preview.3.24172.9\\microsoft.extensions.logging.abstractions.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.options\\9.0.0-preview.3.24172.9\\microsoft.extensions.options.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-preview.3.24172.9\\microsoft.extensions.primitives.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0-preview.3.24172.9\\system.diagnostics.diagnosticsource.9.0.0-preview.3.24172.9.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Gregorio Baldove III\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
