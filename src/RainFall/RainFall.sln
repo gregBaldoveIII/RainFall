@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainFall.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainFall.API", "RainFall.API\RainFall.API.csproj", "{5C3D977C-B3CF-4E44-A471-D9C2DFDDF05E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainFall.Tests", "RainFall.Tests\RainFall.Tests.csproj", "{5D3E60D6-F066-48EC-A010-158E043F86D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,9 @@ Global
 		{8D19988C-F243-4B68-AF19-AE8043547154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D19988C-F243-4B68-AF19-AE8043547154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D19988C-F243-4B68-AF19-AE8043547154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3E60D6-F066-48EC-A010-158E043F86D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3E60D6-F066-48EC-A010-158E043F86D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3E60D6-F066-48EC-A010-158E043F86D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3E60D6-F066-48EC-A010-158E043F86D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
