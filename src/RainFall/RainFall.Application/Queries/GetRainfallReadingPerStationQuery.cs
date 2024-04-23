@@ -1,6 +1,9 @@
-﻿namespace RainFall.Application.Queries;
+﻿using MediatR;
+using RainFall.Domain.Models;
 
-public class GetRainfallReadingPerStationQuery
+namespace RainFall.Application.Queries;
+
+public class GetRainfallReadingPerStationQuery : IRequest<RainfallReadingResponse>
 {
     public int StationId { get; set; }
     public int Count { get; set; }

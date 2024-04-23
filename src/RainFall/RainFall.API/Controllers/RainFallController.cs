@@ -1,7 +1,7 @@
 ﻿using System.Net;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RainFall.Application.Helper;
-using RainFall.Application.Interface;
 using RainFall.Application.Queries;
 using RainFall.Domain.Constants;
 using RainFall.Domain.Models;
@@ -10,14 +10,13 @@ namespace RainFall.API.Controllers;
 
 public class RainFallController : ControllerBase
 {
-    private readonly IQueryHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse> _getRainfallReadingPerStationQueryHandler;
+    private readonly IMediator _mediator;
     private readonly ILogger<RainFallController> _logger;
 
-    public RainFallController(IQueryHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse> getRainfallReadingPerStationQueryHandler, 
-        ILogger<RainFallController> logger
-        )
+    public RainFallController(IMediator mediator,
+        ILogger<RainFallController> logger)
     {
-        _getRainfallReadingPerStationQueryHandler = getRainfallReadingPerStationQueryHandler;
+        _mediator = mediator;
         _logger = logger;
     }
 
@@ -41,7 +40,7 @@ public class RainFallController : ControllerBase
             return BadRequest(ResponseMessage.Invalid);
         }
 
-        var result = await _getRainfallReadingPerStationQueryHandler.HandleAsync(new GetRainfallReadingPerStationQuery
+        var result = await _mediator.Send(new GetRainfallReadingPerStationQuery
         {
             StationId = stationId,
             Count = count

@@ -1,78 +1,78 @@
 ﻿using System.Net;
 using FluentAssertions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using RainFall.API.Controllers;
-using RainFall.Application.Interface;
 using RainFall.Application.Queries;
 using RainFall.Domain.Models;
 using Xunit;
 
-namespace RainFall.Tests.Unit.Controller;
-
-public class RainFallControllerTests
+namespace RainFall.Tests.Unit.Controller
 {
-    private readonly Mock<IQueryHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse>> _mockHandler = new();
-    private readonly Mock<ILogger<RainFallController>> _mockLogger = new();
-
-    [Fact]
-    public async Task GetStationReading_ValidInput_ReturnsOkResult()
+    public class RainFallControllerTests
     {
-        _mockHandler.Setup(handler => handler.HandleAsync(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
-                    .ReturnsAsync(new RainfallReadingResponse { Readings = new List<RainfallReading>() });
+        private readonly Mock<IMediator> _mockMediator = new();
+        private readonly Mock<ILogger<RainFallController>> _mockLogger = new();
 
-        var controller = new RainFallController(_mockHandler.Object, _mockLogger.Object);
+        [Fact]
+        public async Task GetStationReading_ValidInput_ReturnsOkResult()
+        {
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
+                         .ReturnsAsync(new RainfallReadingResponse { Readings = new List<RainfallReading>() });
 
-        var result = await controller.GetStationReading(123, 5, CancellationToken.None);
+            var controller = new RainFallController(_mockMediator.Object, _mockLogger.Object);
 
-        result.Should().BeOfType<OkObjectResult>()
-              .Which.Value.Should().BeAssignableTo<List<RainfallReading>>()
-              .Which.Should().BeEmpty();
-    }
+            var result = await controller.GetStationReading(123, 5, CancellationToken.None);
 
-    [Fact]
-    public async Task GetStationReading_InvalidModelState_ReturnsBadRequest()
-    {
-        var controller = new RainFallController(_mockHandler.Object, _mockLogger.Object);
-        controller.ModelState.AddModelError("count", "Count is required.");
+            result.Should().BeOfType<OkObjectResult>()
+                  .Which.Value.Should().BeAssignableTo<List<RainfallReading>>()
+                  .Which.Should().BeEmpty();
+        }
 
-        var result = await controller.GetStationReading(123, 5, CancellationToken.None);
+        [Fact]
+        public async Task GetStationReading_InvalidModelState_ReturnsBadRequest()
+        {
+            var controller = new RainFallController(_mockMediator.Object, _mockLogger.Object);
+            controller.ModelState.AddModelError("count", "Count is required.");
 
-        result.Should().BeOfType<BadRequestObjectResult>();
-    }
+            var result = await controller.GetStationReading(123, 5, CancellationToken.None);
 
-    [Fact]
-    public async Task GetStationReading_NoReadings_ReturnsNotFoundResult()
-    {
-        _mockHandler.Setup(handler => handler.HandleAsync(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
-                    .ReturnsAsync(new RainfallReadingResponse
-                    {
-                        ErrorDetail = new Error { StatusCode = HttpStatusCode.NotFound, Message = "Not Found" }
-                    });
+            result.Should().BeOfType<BadRequestObjectResult>();
+        }
 
-        var controller = new RainFallController(_mockHandler.Object, _mockLogger.Object);
+        [Fact]
+        public async Task GetStationReading_NoReadings_ReturnsNotFoundResult()
+        {
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
+                         .ReturnsAsync(new RainfallReadingResponse
+                         {
+                             ErrorDetail = new Error { StatusCode = HttpStatusCode.NotFound, Message = "Not Found" }
+                         });
 
-        var result = await controller.GetStationReading(123, 5, CancellationToken.None);
+            var controller = new RainFallController(_mockMediator.Object, _mockLogger.Object);
 
-        result.Should().BeOfType<NotFoundObjectResult>();
-    }
+            var result = await controller.GetStationReading(123, 5, CancellationToken.None);
 
-    [Fact]
-    public async Task GetStationReading_InternalServerError_ReturnsInternalServerErrorResult()
-    {
-        _mockHandler.Setup(handler => handler.HandleAsync(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
-                    .ReturnsAsync(new RainfallReadingResponse
-                    {
-                        ErrorDetail = new Error { StatusCode = HttpStatusCode.InternalServerError, Message = "Internal Server Error" }
-                    });
+            result.Should().BeOfType<NotFoundObjectResult>();
+        }
 
-        var controller = new RainFallController(_mockHandler.Object, _mockLogger.Object);
+        [Fact]
+        public async Task GetStationReading_InternalServerError_ReturnsInternalServerErrorResult()
+        {
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetRainfallReadingPerStationQuery>(), CancellationToken.None))
+                         .ReturnsAsync(new RainfallReadingResponse
+                         {
+                             ErrorDetail = new Error { StatusCode = HttpStatusCode.InternalServerError, Message = "Internal Server Error" }
+                         });
 
-        var result = await controller.GetStationReading(123, 5, CancellationToken.None);
+            var controller = new RainFallController(_mockMediator.Object, _mockLogger.Object);
 
-        result.Should().BeOfType<ObjectResult>()
-              .Which.StatusCode.Should().Be((int)HttpStatusCode.InternalServerError);
+            var result = await controller.GetStationReading(123, 5, CancellationToken.None);
+
+            result.Should().BeOfType<ObjectResult>()
+                  .Which.StatusCode.Should().Be((int)HttpStatusCode.InternalServerError);
+        }
     }
 }
-

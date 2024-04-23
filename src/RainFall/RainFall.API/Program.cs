@@ -1,4 +1,5 @@
 using AutoMapper;
+using MediatR;
 using Microsoft.OpenApi.Models;
 using RainFall.Application.Helper;
 using RainFall.Application.Interface;
@@ -20,6 +21,8 @@ builder.Services.AddEndpointsApiExplorer();
 // Add HTTP client
 builder.Services.AddHttpClient();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
 // add services to MS DI container
 {
     var services = builder.Services;
@@ -40,7 +43,7 @@ builder.Services.AddHttpClient();
     
     services.AddScoped<IEnvironmentAgencyAgent, EnvironmentAgencyAgent>();
     services.AddScoped<IRainFallReadingService, RainFallReadingService>();
-    services.AddScoped<IQueryHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse>, GetRainfallReadingPerStationQueryHandler>();
+    services.AddScoped<IRequestHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse>, GetRainfallReadingPerStationQueryHandler>();
     
     services.AddSwaggerGen(opt =>
     {
