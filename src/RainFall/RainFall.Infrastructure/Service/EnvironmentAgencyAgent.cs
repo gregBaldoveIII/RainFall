@@ -13,8 +13,8 @@ public class EnvironmentAgencyAgent : IEnvironmentAgencyAgent
     private readonly HttpClient _httpClient;
     private readonly EnvironmentAgencyConfiguration _environmentAgencyConfiguration;
     private readonly ILogger<EnvironmentAgencyAgent> _logger;
-    
-    public EnvironmentAgencyAgent(HttpClient httpClient, 
+
+    public EnvironmentAgencyAgent(HttpClient httpClient,
         IOptions<EnvironmentAgencyConfiguration> environmentAgencyConfiguration,
         ILogger<EnvironmentAgencyAgent> logger)
     {
@@ -26,11 +26,11 @@ public class EnvironmentAgencyAgent : IEnvironmentAgencyAgent
     public async Task<StationReadingResponse?> GetStationReading(int stationId, int count, CancellationToken ct = default)
     {
         var baseUrl = _environmentAgencyConfiguration.BaseUrl;
-        
+
         var stationPath = $"flood-monitoring/id/stations/{stationId}/readings";
         var limitQuery = $"_limit={count}";
         var requestUrl = $"{baseUrl}{stationPath}?{limitQuery}";
-        
+
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
 
         var response = await _httpClient.SendAsync(request, ct);
@@ -44,7 +44,7 @@ public class EnvironmentAgencyAgent : IEnvironmentAgencyAgent
 
         _logger.LogError("Error getting readings from external API, Status Code: {statusCode}, Error: {error} ", response.StatusCode,
             await response.Content.ReadAsStringAsync(ct));
-        
+
         var error = await GetResponse<StationReadingErrorResponse>(response.Content, ct);
         return new StationReadingErrorResponse(error!.StatusCode);
     }

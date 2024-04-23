@@ -2,7 +2,7 @@
 
 public class RainfallReadingResponse
 {
-    public List<RainfallReading> Readings { get; set; } = new ();
+    public List<RainfallReading> Readings { get; set; } = new();
     public Error ErrorDetail { get; set; } = new();
     public bool HasError => !string.IsNullOrEmpty(ErrorDetail.Message);
 }

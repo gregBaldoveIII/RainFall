@@ -5,7 +5,7 @@ namespace RainFall.Infrastructure.Models;
 
 public class StationReadingResponse
 {
-    
+
 }
 
 public class StationReadingErrorResponse : StationReadingResponse

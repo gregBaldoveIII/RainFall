@@ -45,7 +45,7 @@ public class RainFallController : ControllerBase
             StationId = stationId,
             Count = count
         }, cancellationToken);
-        
+
         if (!result.HasError)
         {
             return Ok(result.Readings);

@@ -26,7 +26,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Progr
 // add services to MS DI container
 {
     var services = builder.Services;
-    
+
     services.Configure<EnvironmentAgencyConfiguration>(builder.Configuration.GetSection(EnvironmentAgencyConfiguration.SectionName));
 
     services.AddScoped(provider =>
@@ -40,11 +40,11 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Progr
 
         return mapperConfig.CreateMapper();
     });
-    
+
     services.AddScoped<IEnvironmentAgencyAgent, EnvironmentAgencyAgent>();
     services.AddScoped<IRainFallReadingService, RainFallReadingService>();
     services.AddScoped<IRequestHandler<GetRainfallReadingPerStationQuery, RainfallReadingResponse>, GetRainfallReadingPerStationQueryHandler>();
-    
+
     services.AddSwaggerGen(opt =>
     {
         opt.SwaggerDoc("v1", new OpenApiInfo { Title = "RainFall API", Version = "1.0.0" });
